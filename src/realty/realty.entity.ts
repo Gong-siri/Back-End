@@ -11,6 +11,14 @@ export class Realty {
   @Column()
   name: string;
 
+  @Column()
+  monthly_rent: number;
+
+  @Column()
+  daily_rent: number;
+
+  @Column()
+  hourly_rent: number;
   // @Column()
   // sido_name: string;
 
