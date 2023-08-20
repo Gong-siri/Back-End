@@ -25,6 +25,27 @@ export class RealtyController {
   }
 
   @UseGuards(JwtAuthGuard)
+  @Get('pinned')
+  findPinned(@Req() req: any) {
+    return this.realtyService.findPinnedRealty(req.user.userId);
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Put('/:id')
+  updateRealty(@Param('id') id: string, @Body() body: UpdateRealtyDto) {
+    return this.realtyService.update(parseInt(id), body);
+  }
+
+  // @UseGuards(JwtAuthGuard)
+  // @Get('/:id')
+  // findRentRealty(@Param('id') @Req() req: any) {
+  //   return this.realtyService.findByOwnerProperty(
+  //     req.user.userId,
+  //     req.realty.status,
+  //   );
+  // }
+
+  @UseGuards(JwtAuthGuard)
   @Put('/:id')
   updatePrice(@Param('id') id: string, @Body() body: UpdateRealtyDto) {
     return this.realtyService.update(parseInt(id), body);

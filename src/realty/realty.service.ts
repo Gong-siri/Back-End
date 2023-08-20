@@ -12,6 +12,19 @@ export class RealtyService {
     return this.realty.findBy({ ownerId });
   }
 
+  findPinnedRealty(ownerId: number) {
+    return this.realty.findBy({ ownerId, pinned: true });
+  }
+
+  findOne(id: number) {
+    if (!id) return null;
+    return this.realty.findOne({
+      where: {
+        id,
+      },
+    });
+  }
+
   async update(id: number, realtyDto: UpdateRealtyDto) {
     const realty = await this.realty.findOne({
       where: {
@@ -24,14 +37,5 @@ export class RealtyService {
     }
 
     return this.realty.save({ ...realty, ...realtyDto });
-  }
-
-  findOne(id: number) {
-    if (!id) return null;
-    return this.realty.findOne({
-      where: {
-        id,
-      },
-    });
   }
 }

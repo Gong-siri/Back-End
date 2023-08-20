@@ -19,6 +19,16 @@ export class Realty {
 
   @Column()
   hourly_rent: number;
+
+  @Column()
+  status: string;
+
+  @Column({ default: false })
+  vacantAdvertising: boolean;
+
+  @Column({ default: false })
+  pinned: boolean;
+
   // @Column()
   // sido_name: string;
 
