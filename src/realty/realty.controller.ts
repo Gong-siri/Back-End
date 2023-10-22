@@ -45,9 +45,9 @@ export class RealtyController {
   //   );
   // }
 
-  @UseGuards(JwtAuthGuard)
-  @Put('/:id')
-  updatePrice(@Param('id') id: string, @Body() body: UpdateRealtyDto) {
-    return this.realtyService.update(parseInt(id), body);
-  }
+  // @UseGuards(JwtAuthGuard)
+  // @Put('/:id')
+  // updatePrice(@Param('id') id: string, @Body() body: UpdateRealtyDto) {
+  //   return this.realtyService.update(parseInt(id), body);
+  // }
 }

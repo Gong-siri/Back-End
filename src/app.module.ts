@@ -3,7 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { TodosModule } from './todos/todos.module';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
-import { HealthModule } from './health/health.module';
+//import { HealthModule } from './health/health.module';
 import { RealtyModule } from './realty/realty.module';
 
 const isProduction = process.env.NODE_ENV === 'production';
@@ -23,7 +23,7 @@ const isProduction = process.env.NODE_ENV === 'production';
     TodosModule,
     AuthModule,
     UsersModule,
-    HealthModule,
+    //HealthModule,
     RealtyModule,
   ],
 })
